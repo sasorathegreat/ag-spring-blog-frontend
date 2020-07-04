@@ -7,6 +7,8 @@ import { HeaderComponent } from './header/header.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterSucessComponent } from './auth/register-sucess/register-sucess.component';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,13 @@ import { RegisterSucessComponent } from './auth/register-sucess/register-sucess.
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    //Declaring all the route for the app
+    RouterModule.forRoot([
+      { path: 'register', component:RegisterComponent}
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
